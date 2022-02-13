@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+@model CreateDog
+
+<div class="container">
+<h1>Add new dog</h1>
+
+<form action="/Dogs" method="post" enctype="multipart/form-data">
+    <!--Name-->
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required asp-for="Name"><br><br>
+
+  <!--Breed-->
+   <label for="breed">Choose a breed:</label>
+        <select required id="breed" name="breed" asp-for="Breed">
+          <option></option>
+          <option value="Poodle">Poodle</option>
+          <option value="Jack Russel">Jack Russsel</option>
+          <option value="Golden Retriver">Golden Retriver</option>
+          <option value="Bulldog">Bulldog</option>
+        </select><br><br>
+        
+    <!--Age-->
+    <label for="age">Choose age:</label>
+        <select id="age" name="age" asp-for="Age" required>
+        <option></option>
+        @for (int i = 0; i<4; i++)
+        {
+            <option value="@i weeks">@i weeks</option>
+        }
+        @for (int i = 1; i<12; i++)
+        {
+            <option value="@i months">@i months</option>
+        }
+        @for (int i = 1; i<21; i++)
+        {
+            <option value="@i years">@i years</option>
+        }
+        </select><br><br>
+
+  <!--Gender-->
+  <label for="gender">Gender:</label><br>
+  <input  type="radio" id="male" name="gender" value="Male" asp-for="Gender" required>
+  <label for="male">Male</label><br>
+
+  <input type="radio" id="female" name="gender" value="Female" asp-for="Gender">
+  <label for="female">Female</label><br><br>
+  
+    <!--Pic-->
+  <label for="pic">Picture:</label><br>
+  <input type="file" id="pic" name="pic" asp-for="Pic"><br><br>
+
+  <input type="submit" value="🐶 Add">
+
+</form>
+</div>

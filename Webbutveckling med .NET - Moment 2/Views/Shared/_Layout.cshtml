@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Webbutveckling med .NET - Moment 2</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Webbutveckling_med_.NET___Moment_2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav>
+            
+                <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">🐶 Adopt a Dog</a>
+                
+                <div>
+                    <ul>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Dogs">Our Dogs</a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                    </ul>
+                </div>
+            
+        </nav>
+    </header>
+    
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    
+
+    <footer>
+        <div>
+            <p class="footerText">Emelie Frendel &copy; 2022 - Webbutveckling med .NET - Moment 2</p>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

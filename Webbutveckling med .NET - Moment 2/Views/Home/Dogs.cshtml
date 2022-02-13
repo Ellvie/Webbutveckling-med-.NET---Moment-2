@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Our Dogs";
+}
+
+@model List<Dog>;
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <a class="button" asp-area="" asp-controller="Home" asp-action="Add">🐶 Add new dog</a>
+
+    <div class="dogWrapper">
+        @foreach (var dog in Model)
+        {
+            <div class="dog">
+                <img src="~/pics/@dog.Pic" alt="🐶">
+                <div class="text">
+                    <p><b>Name: </b><em>@dog.Name</em></p>
+                    <p><b>Breed: </b><em>@dog.Breed</em></p>
+                    <p><b>Age: </b><em>@dog.Age</em></p>
+                    <p><b>Gender: </b><em>@dog.Gender</em></p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!--Partial-->
+    @Html.Partial("_Motto")
+</div>
+

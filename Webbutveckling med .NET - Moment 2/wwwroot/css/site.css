@@ -1,0 +1,199 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+/*General -----------------------------------------------------*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7em;
+    background-color: #2f9503;
+    background-image: linear-gradient(45deg, #f8fef5, #c8fbce);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin: auto auto 0 auto;
+    padding: 2em 0;
+    width: 90%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 2em;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Comic Sans MS';
+    font-size: 1.5rem;
+    text-transform: unset;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.banner {
+    position: relative;
+    margin: -5em 0 0 0;
+    z-index: -1;
+}
+
+.bannerText {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    padding: 1em;
+    font-size: 1.5em;
+    background-color: #c9e1cc72;
+    color: #1c5b01;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.container {
+    margin: 5em auto 0 auto;
+    padding: 2em;
+    width: 50%;
+    background-color: #f5f5f5;
+}
+
+.dogWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2em 0;
+    flex-wrap: wrap;
+}
+
+.dog {
+    margin-top: 2em;
+    width: 30%;
+    border: 1px solid #97b79b;
+    border-radius: 5px;
+}
+
+    .dog img {
+        text-align: center;
+        font-size: 3em;
+    }
+
+.text {
+    margin: 1em;
+}
+
+/*Links ------------------------------------------------------*/
+a {
+    text-decoration: none;
+    color: #1c5b01;
+}
+
+    a:hover {
+        color: #2f9503;
+    }
+
+nav a {
+    color: #1c5b01;
+    text-transform: uppercase;
+}
+
+    nav a:hover {
+        color: #412b0a;
+    }
+
+.button {
+    padding: 1em;
+    background-color: #f8fef5;
+    background-image: linear-gradient(45deg, #f8fef5, #c8fbce);
+    border: 1px solid #1c5b01;
+    border-radius: 5px;
+}
+
+    .button:hover {
+        background-image: linear-gradient(45deg, #c8fbce, #f8fef5);
+    }
+
+/*Lists ------------------------------------------------------*/
+ul {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav li {
+    margin-left: 2em;
+}
+
+/*Typography -----------------------------------------------*/
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-top: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #412b0a;
+    margin-bottom: 1.5em;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+.bannerText p {
+    margin-bottom: 0;
+}
+
+.ingress {
+    color: #412b0a;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.motto {
+    font-style: italic;
+    color: #412b0a;
+    text-align: center;
+    margin-top: 3em;
+}
+
+.footerText {
+    font-style: italic;
+    color: #412b0a;
+}
+
+
+/*Form ---------------------------------------------*/
+input[type=button], input[type=submit], input[type=reset] {
+    padding: 1em;
+    background-color: #f8fef5;
+    background-image: linear-gradient(45deg, #f8fef5, #c8fbce);
+    border: 1px solid #1c5b01;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+        background-image: linear-gradient(45deg, #c8fbce, #f8fef5);
+    }

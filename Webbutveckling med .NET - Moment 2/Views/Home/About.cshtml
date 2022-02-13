@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+
+    <!--Text viewbag-->
+    <p class="ingress">@ViewBag.text</p>
+
+    <h2>Adopt a dog history</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at mauris sit amet massa imperdiet facilisis. Aenean vel dui vel velit cursus fringilla. Sed sit amet mauris nibh. Vivamus finibus, leo ut dictum interdum, mauris risus iaculis mi, eu lacinia metus dolor quis quam. In condimentum erat vel sem scelerisque, nec vehicula nunc pulvinar. Nulla facilisi. Sed porttitor ipsum eget cursus pulvinar. Pellentesque auctor blandit nisl, non tristique leo viverra ut.</p>
+    
+    <h2>Our mission</h2>
+    
+    <p>Praesent varius turpis mi, vestibulum aliquam sapien ullamcorper quis. Vivamus pellentesque, dolor nec pharetra gravida, odio eros gravida metus, nec varius dui augue nec arcu. Pellentesque mauris tellus, pellentesque congue egestas et, dictum sit amet libero. Donec efficitur magna nec hendrerit imperdiet. Curabitur tempor, nunc eu feugiat cursus, nibh nisl euismod tortor, et pharetra augue neque in lectus. Pellentesque elementum leo ut faucibus interdum. Phasellus tincidunt bibendum nulla vitae blandit. Maecenas gravida nisl vel faucibus ultrices. Ut pharetra nisi mauris, sit amet commodo tortor molestie vitae. Curabitur sagittis semper ipsum sed vulputate. Nunc nunc mauris, venenatis vel nisl ut, ullamcorper hendrerit libero. Phasellus erat metus, elementum ac luctus at, porttitor eu metus. Curabitur ornare massa eu ex lacinia vehicula. Vivamus rutrum pharetra ullamcorper. Morbi aliquet pharetra posuere. Aliquam nibh felis, iaculis tincidunt lacus sed, viverra laoreet enim. </p>
+    
+    <!--Session viewbag-->
+    <p>@ViewBag.session</p>
+
+
+    <!--Partial-->
+    @Html.Partial("_Motto")
+
+    
+</div>
