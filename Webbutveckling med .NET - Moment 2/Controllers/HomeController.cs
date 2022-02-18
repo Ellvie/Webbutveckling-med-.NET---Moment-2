@@ -18,6 +18,8 @@ namespace Webbutveckling_med_.NET___Moment_2.Controllers
             webHostEnvironment = hostEnvironment;
         }
 
+
+        //Index page
         public IActionResult Index()
         {
             //View data
@@ -32,6 +34,45 @@ namespace Webbutveckling_med_.NET___Moment_2.Controllers
             return View();
         }
 
+
+
+
+        //Dogs page - GET
+        [HttpGet("/Dogs")]
+        public IActionResult Dogs()
+        {
+            //Name of json file
+            var fileName = "data.json";
+
+            //Filepath of json file
+            var filePath = Path.Combine(webHostEnvironment.WebRootPath, fileName);
+
+            //Initialize new list
+            var dogs = new List<Dog>();
+
+            //Check if json file exists
+            if (System.IO.File.Exists(filePath))
+            {
+                //Read json
+                var json = System.IO.File.ReadAllText(filePath);
+
+                //Deserialize json into list
+                dogs = JsonSerializer.Deserialize<List<Dog>>(json);
+            }
+            else
+            {
+                //Save and/or create json
+                Save(dogs, filePath);
+            }
+
+            //Return view and list
+            return View(dogs);
+        }
+
+
+
+
+        //Dogs page - POST
         [HttpPost("/Dogs")]
         public IActionResult CreateDog(CreateDog newDog)
         {
@@ -90,36 +131,9 @@ namespace Webbutveckling_med_.NET___Moment_2.Controllers
         }
         
 
-        [HttpGet("/Dogs")]
-        public IActionResult Dogs()
-        {
-            //Name of json file
-            var fileName = "data.json";
 
-            //Filepath of json file
-            var filePath = Path.Combine(webHostEnvironment.WebRootPath, fileName);
 
-            //Initialize new list
-            var dogs = new List<Dog>();
-            
-            //Check if json file exists
-            if (System.IO.File.Exists(filePath))
-            {
-                //Read json
-                var json = System.IO.File.ReadAllText(filePath);
-
-                //Deserialize json into list
-                dogs = JsonSerializer.Deserialize<List<Dog>>(json);
-            } else
-            {
-                //Save and/or create json
-                Save(dogs, filePath);
-            }
-             
-            //Return view and list
-            return View(dogs);
-        }
-
+        //Add form page - GET
         [HttpGet("/AddNewDog")]
         public IActionResult Add()
         {
@@ -127,6 +141,9 @@ namespace Webbutveckling_med_.NET___Moment_2.Controllers
             return View();
         }
 
+
+
+        //About page - GET
         [HttpGet("/About")]
         public IActionResult About()
         {
@@ -142,11 +159,17 @@ namespace Webbutveckling_med_.NET___Moment_2.Controllers
             return View();
         }
 
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
+
 
 
         //Save method
